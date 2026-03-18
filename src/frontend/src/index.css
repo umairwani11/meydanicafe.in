@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm cream background #F3EBDD */
+    --background: 0.934 0.028 75;
+    --foreground: 0.19 0.042 40;
+
+    /* Card #FFFFFF / #FFF8EE */
+    --card: 0.99 0.008 75;
+    --card-foreground: 0.19 0.042 40;
+
+    /* Popover */
+    --popover: 0.99 0.008 75;
+    --popover-foreground: 0.19 0.042 40;
+
+    /* Gold/tan primary #C9A26A */
+    --primary: 0.72 0.1 65;
+    --primary-foreground: 0.19 0.042 40;
+
+    /* Secondary - off-white on dark */
+    --secondary: 0.96 0.015 75;
+    --secondary-foreground: 0.19 0.042 40;
+
+    /* Muted warm gray #6C625B */
+    --muted: 0.9 0.018 75;
+    --muted-foreground: 0.46 0.022 55;
+
+    /* Accent espresso #2B1A12 used as accent ring */
+    --accent: 0.88 0.025 75;
+    --accent-foreground: 0.19 0.042 40;
+
+    /* Destructive */
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 90;
+
+    /* Border/Input #E7D9C6 */
+    --border: 0.873 0.027 75;
+    --input: 0.873 0.027 75;
+    --ring: 0.72 0.1 65;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar: 0.934 0.028 75;
+    --sidebar-foreground: 0.19 0.042 40;
+    --sidebar-primary: 0.72 0.1 65;
+    --sidebar-primary-foreground: 0.19 0.042 40;
+    --sidebar-accent: 0.9 0.018 75;
+    --sidebar-accent-foreground: 0.19 0.042 40;
+    --sidebar-border: 0.873 0.027 75;
+    --sidebar-ring: 0.72 0.1 65;
+
+    /* Charts */
+    --chart-1: 0.72 0.1 65;
+    --chart-2: 0.18 0.04 40;
+    --chart-3: 0.6 0.08 50;
+    --chart-4: 0.85 0.06 75;
+    --chart-5: 0.46 0.022 55;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", system-ui, sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-1 {
+    transition-delay: 0.1s;
+  }
+  .stagger-2 {
+    transition-delay: 0.2s;
+  }
+  .stagger-3 {
+    transition-delay: 0.3s;
+  }
+  .stagger-4 {
+    transition-delay: 0.4s;
+  }
+}
